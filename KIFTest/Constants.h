@@ -20,3 +20,8 @@ extern NSString *const kFirstLabel;
 extern NSString *const kFirstTextField;
 extern NSString *const kSecondLabel;
 extern NSString *const kSecondTextField;
+
+#pragma mark - Modal ViewController
+extern NSString *const kModalViewTitle;
+extern NSString *const kTableView;
+extern NSString *const kCloseButtonLabel;

@@ -17,3 +17,7 @@ NSString *const kFirstLabel = @"Name";
 NSString *const kFirstTextField = @"Insert name";
 NSString *const kSecondLabel = @"Surname";
 NSString *const kSecondTextField = @"Insert surname";
+
+NSString *const kModalViewTitle = @"List";
+NSString *const kTableView = @"Products List";
+NSString *const kCloseButtonLabel = @"Close";

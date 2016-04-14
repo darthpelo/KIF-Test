@@ -57,14 +57,6 @@
                BlueprintName = "UI Tests"
                ReferencedContainer = "container:KIFTest.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "nextButtonTest/testNextPress">
-               </Test>
-               <Test
-                  Identifier = "nextButtonTest/testTryFunctions">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

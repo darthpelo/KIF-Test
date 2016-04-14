@@ -13,6 +13,8 @@
 		D947180C1CBD4E4100B0396A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D947180A1CBD4E4100B0396A /* Main.storyboard */; };
 		D947180E1CBD4E4100B0396A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D947180D1CBD4E4100B0396A /* Assets.xcassets */; };
 		D94718111CBD4E4100B0396A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D947180F1CBD4E4100B0396A /* LaunchScreen.storyboard */; };
+		D9557DD61CBFCC57003C04E0 /* modelViewControllTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9557DD51CBFCC57003C04E0 /* modelViewControllTests.m */; };
+		D95616AF1CBFBA8E00C00B72 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95616AE1CBFBA8E00C00B72 /* ModalViewController.m */; };
 		D9DA95381CBE8134001196B2 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DA95371CBE8134001196B2 /* SecondViewController.m */; };
 		D9DA953C1CBE9FA0001196B2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DA953B1CBE9FA0001196B2 /* Constants.m */; };
 		D9EB00421CBE5A010027D909 /* libKIF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EB00271CBE58300027D909 /* libKIF.a */; };
@@ -93,6 +95,9 @@
 		D94718121CBD4E4100B0396A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D947183D1CBD4EBA00B0396A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D947183F1CBD4EBF00B0396A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D9557DD51CBFCC57003C04E0 /* modelViewControllTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = modelViewControllTests.m; sourceTree = "<group>"; };
+		D95616AD1CBFBA8E00C00B72 /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
+		D95616AE1CBFBA8E00C00B72 /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
 		D9DA95361CBE8134001196B2 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		D9DA95371CBE8134001196B2 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		D9DA953A1CBE9FA0001196B2 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -127,11 +132,10 @@
 		D94717F51CBD4E4000B0396A = {
 			isa = PBXGroup;
 			children = (
-				D947183F1CBD4EBF00B0396A /* QuartzCore.framework */,
-				D947183D1CBD4EBA00B0396A /* CoreGraphics.framework */,
+				D95616AC1CBFBA3200C00B72 /* Frameworks */,
 				D94718001CBD4E4100B0396A /* KIFTest */,
-				D9EB00371CBE58700027D909 /* UI Tests */,
 				D94717FF1CBD4E4000B0396A /* Products */,
+				D9EB00371CBE58700027D909 /* UI Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,19 +151,18 @@
 		D94718001CBD4E4100B0396A /* KIFTest */ = {
 			isa = PBXGroup;
 			children = (
+				D95616AB1CBFBA2500C00B72 /* Storyboards */,
+				D94718011CBD4E4100B0396A /* Supporting Files */,
 				D94718041CBD4E4100B0396A /* AppDelegate.h */,
 				D94718051CBD4E4100B0396A /* AppDelegate.m */,
+				D9DA953A1CBE9FA0001196B2 /* Constants.h */,
+				D9DA953B1CBE9FA0001196B2 /* Constants.m */,
+				D95616AD1CBFBA8E00C00B72 /* ModalViewController.h */,
+				D95616AE1CBFBA8E00C00B72 /* ModalViewController.m */,
 				D9DA95361CBE8134001196B2 /* SecondViewController.h */,
 				D9DA95371CBE8134001196B2 /* SecondViewController.m */,
 				D94718071CBD4E4100B0396A /* ViewController.h */,
 				D94718081CBD4E4100B0396A /* ViewController.m */,
-				D947180A1CBD4E4100B0396A /* Main.storyboard */,
-				D947180D1CBD4E4100B0396A /* Assets.xcassets */,
-				D947180F1CBD4E4100B0396A /* LaunchScreen.storyboard */,
-				D94718121CBD4E4100B0396A /* Info.plist */,
-				D94718011CBD4E4100B0396A /* Supporting Files */,
-				D9DA953A1CBE9FA0001196B2 /* Constants.h */,
-				D9DA953B1CBE9FA0001196B2 /* Constants.m */,
 			);
 			path = KIFTest;
 			sourceTree = "<group>";
@@ -167,9 +170,29 @@
 		D94718011CBD4E4100B0396A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D94718121CBD4E4100B0396A /* Info.plist */,
+				D947180D1CBD4E4100B0396A /* Assets.xcassets */,
 				D94718021CBD4E4100B0396A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D95616AB1CBFBA2500C00B72 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D947180F1CBD4E4100B0396A /* LaunchScreen.storyboard */,
+				D947180A1CBD4E4100B0396A /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		D95616AC1CBFBA3200C00B72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D947183F1CBD4EBF00B0396A /* QuartzCore.framework */,
+				D947183D1CBD4EBA00B0396A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D9EB001D1CBE58300027D909 /* Products */ = {
@@ -191,6 +214,7 @@
 				D9EB001C1CBE58300027D909 /* KIF.xcodeproj */,
 				D9EB003A1CBE58700027D909 /* Info.plist */,
 				D9EB00451CBE5B130027D909 /* nextButtonTest.m */,
+				D9557DD51CBFCC57003C04E0 /* modelViewControllTests.m */,
 			);
 			path = "UI Tests";
 			sourceTree = "<group>";
@@ -349,6 +373,7 @@
 			files = (
 				D9DA953C1CBE9FA0001196B2 /* Constants.m in Sources */,
 				D9DA95381CBE8134001196B2 /* SecondViewController.m in Sources */,
+				D95616AF1CBFBA8E00C00B72 /* ModalViewController.m in Sources */,
 				D94718091CBD4E4100B0396A /* ViewController.m in Sources */,
 				D94718061CBD4E4100B0396A /* AppDelegate.m in Sources */,
 				D94718031CBD4E4100B0396A /* main.m in Sources */,
@@ -360,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9EB00461CBE5B130027D909 /* nextButtonTest.m in Sources */,
+				D9557DD61CBFCC57003C04E0 /* modelViewControllTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
