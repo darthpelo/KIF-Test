@@ -7,6 +7,8 @@
 //
 
 #import <KIF/KIF.h>
+
+#import "KIFUITestActor+EXAdditions.h"
 #import "Constants.h"
 
 @interface nextButtonTest : KIFTestCase
@@ -14,6 +16,11 @@
 @end
 
 @implementation nextButtonTest
+
+- (void)beforeEach
+{
+    [tester navigateToFirstView];
+}
 
 - (void)testNextPress {
     if ([tester tryFindingViewWithAccessibilityLabel:kFirstViewTitle error:NULL]) {

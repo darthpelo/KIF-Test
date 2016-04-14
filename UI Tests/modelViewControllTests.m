@@ -7,6 +7,8 @@
 //
 
 #import <KIF/KIF.h>
+
+#import "KIFUITestActor+EXAdditions.h"
 #import "Constants.h"
 
 @interface modelViewControllTests : KIFTestCase
@@ -14,6 +16,11 @@
 @end
 
 @implementation modelViewControllTests
+
+- (void)beforeEach
+{
+    [tester navigateToFirstView];
+}
 
 - (void)testViewController {
     [tester tapViewWithAccessibilityLabel:kModalButtonLabel];
