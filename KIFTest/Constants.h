@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const kBack;
+
 #pragma mark - First ViewController
 extern NSString *const kFirstViewTitle;
 extern NSString *const kNextButtonLabel;
@@ -20,6 +22,9 @@ extern NSString *const kFirstLabel;
 extern NSString *const kFirstTextField;
 extern NSString *const kSecondLabel;
 extern NSString *const kSecondTextField;
+extern NSString *const kAlertTitle;
+extern NSString *const kAlertMessage;
+extern NSString *const kDoneButton;
 
 #pragma mark - Modal ViewController
 extern NSString *const kModalViewTitle;

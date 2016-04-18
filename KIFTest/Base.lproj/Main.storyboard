@@ -170,6 +170,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OT9-aI-OZo">
+                                <rect key="frame" x="277" y="264" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="dobeButtonTapped:" destination="x1M-Vc-g10" eventType="touchUpInside" id="6lh-sK-mtt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -182,11 +189,14 @@
                             <constraint firstItem="FVE-dF-fN3" firstAttribute="leading" secondItem="FS1-xC-K7d" secondAttribute="leadingMargin" constant="16" id="W6o-dL-WrR"/>
                             <constraint firstItem="kEG-zl-qtp" firstAttribute="leading" secondItem="0HC-D7-tvs" secondAttribute="trailing" constant="8" id="fZR-h1-gu2"/>
                             <constraint firstItem="49V-b7-ilp" firstAttribute="leading" secondItem="kEG-zl-qtp" secondAttribute="leading" id="kVg-96-toR"/>
+                            <constraint firstItem="OT9-aI-OZo" firstAttribute="top" secondItem="kEG-zl-qtp" secondAttribute="bottom" constant="42.5" id="r1q-Dn-U3m"/>
+                            <constraint firstItem="OT9-aI-OZo" firstAttribute="centerX" secondItem="FS1-xC-K7d" secondAttribute="centerX" id="uGy-HT-lrS"/>
                             <constraint firstItem="kEG-zl-qtp" firstAttribute="centerY" secondItem="0HC-D7-tvs" secondAttribute="centerY" id="v4j-OZ-CzU"/>
                             <constraint firstAttribute="trailing" secondItem="kEG-zl-qtp" secondAttribute="trailing" constant="16" id="xZA-zI-chZ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="OT9-aI-OZo" id="2aB-GX-np3"/>
                         <outlet property="firstLabel" destination="FVE-dF-fN3" id="xbO-Ab-emf"/>
                         <outlet property="firstTextField" destination="49V-b7-ilp" id="vQI-41-eJq"/>
                         <outlet property="secondLabel" destination="0HC-D7-tvs" id="hPy-pI-m2B"/>

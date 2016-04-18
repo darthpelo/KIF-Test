@@ -30,21 +30,7 @@
     }
     
     if ([tester waitForViewWithAccessibilityLabel:kSecondViewTitle]) {
-        [tester tapViewWithAccessibilityLabel:@"Back"];
-    } else {
-        [tester fail];
-    }
-}
-
-- (void)testTryFunctions {
-    if ([tester tryFindingTappableViewWithAccessibilityLabel:@"Back" error:NULL]) {
-        [tester tapViewWithAccessibilityLabel:@"Back"];
-    } else {
-        [tester fail];
-    }
-    
-    if ([tester tryFindingTappableViewWithAccessibilityLabel:kModalButtonLabel error:NULL]) {
-        [tester tapViewWithAccessibilityLabel:kModalButtonLabel];
+        [tester tapViewWithAccessibilityLabel:kBack];
     } else {
         [tester fail];
     }
@@ -61,6 +47,7 @@
         NSString *name = @"Alessio";
         NSString *surname = @"Roberto";
         
+        // Fill firstname and lastname textfields
         [tester enterText:name intoViewWithAccessibilityLabel:kFirstTextField];
         [tester enterText:surname intoViewWithAccessibilityLabel:kSecondTextField];
         
@@ -70,7 +57,34 @@
         UITextField *second = (UITextField*)[tester waitForTappableViewWithAccessibilityLabel:kSecondTextField];
         XCTAssertTrue([second.text isEqualToString:surname]);
         
-        [tester tapViewWithAccessibilityLabel:@"Back"];
+        [tester tapViewWithAccessibilityLabel:kDoneButton];
+        
+        [tester waitForViewWithAccessibilityLabel:kFirstViewTitle];
+    } else {
+        [tester fail];
+    }
+}
+
+- (void)testTextFieldValidation {
+    if ([tester tryFindingViewWithAccessibilityLabel:kFirstViewTitle error:NULL]) {
+        [tester tapViewWithAccessibilityLabel:kNextButtonLabel];
+    } else {
+        [tester fail];
+    }
+    
+    if ([tester waitForViewWithAccessibilityLabel:kSecondViewTitle]) {
+        NSString *name = @"Alessio";
+        
+        // Fill firstname and lastname textfields
+        [tester enterText:name intoViewWithAccessibilityLabel:kFirstTextField];
+        
+        UITextField *first = (UITextField*)[tester waitForTappableViewWithAccessibilityLabel:kFirstTextField];
+        XCTAssertTrue([first.text isEqualToString:name]);
+        
+        [tester tapViewWithAccessibilityLabel:kDoneButton];
+        
+        [tester waitForViewWithAccessibilityLabel:kAlertTitle];
+        
     } else {
         [tester fail];
     }
