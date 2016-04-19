@@ -24,7 +24,9 @@
 
 - (void)testViewController {
     [tester tapViewWithAccessibilityLabel:kModalButtonLabel];
+    
     [tester waitForViewWithAccessibilityLabel:kModalViewTitle];
+    
     [tester tapViewWithAccessibilityLabel:kCloseButtonLabel];
     
     [tester waitForTappableViewWithAccessibilityLabel:kFirstViewTitle];
