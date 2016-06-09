@@ -385,7 +385,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo ${BUILT_PRODUCTS_DIR}\ncp -R ${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.app /Users/alessioroberto/Dropbox/Progetti/KIFTest/KIFTest/build";
+			shellScript = "echo *****Copy executable in ${PROJECT_DIR}/KIFTest/build*****\ncp -R ${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.app ${PROJECT_DIR}/KIFTest/build\ncd ${PROJECT_DIR}/appium\necho *****Start ruby test script*****\nrspec ios.rb";
 		};
 /* End PBXShellScriptBuildPhase section */
 

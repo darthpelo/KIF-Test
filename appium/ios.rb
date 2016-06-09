@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'appium_lib'
 
-APP_PATH = '/Users/alessioroberto/Library/Developer/Xcode/DerivedData/KIFTest-eroiaqxtytzxauebbnncjvhlsegl/Build/Products/Debug-iphonesimulator/KIFTest.app'
+APP_PATH = '../KIFTest/build/KIFTest.app'
 
 desired_caps = {
   caps: {
@@ -21,18 +21,13 @@ Appium::Driver.new(desired_caps).start_driver
 module Test
   module IOS
     Appium.promote_singleton_appium_methods Test
+    navBarTitle = "//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAStaticText[1]"
 
-    # Recorded code
-    # find_element(:xpath, "//UIAApplication[1]/UIAWindow[1]/UIAButton[1]").click
-    # find_element(:xpath, "//UIAApplication[1]/UIAWindow[1]/UIATextField[1]/UIATextField[1]").send_keys "a"
-    # find_element(:xpath, "//UIAApplication[1]/UIAWindow[1]/UIATextField[2]/UIATextField[1]").send_keys "b"
-    # find_element(:xpath, "//UIAApplication[1]/UIAWindow[1]/UIAButton[1]").click
-    # alert_accept
+    puts 'Test starts'
 
-    # Manual code
-    # # First View
-    # title = find_element(:xpath, "//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAStaticText[1]")
-    # raise Exception unless title.label == "First View"
+    # First View
+    title = find_element(:xpath, navBarTitle)
+    raise Exception unless title.label == "First View"
 
     next_button =
     find_element(:xpath, "//UIAApplication[1]/UIAWindow[1]/UIAButton[1]")
@@ -40,8 +35,8 @@ module Test
     puts 'Tapped Next button'
 
     # # Second View
-    # title = find_element(:xpath, "//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAStaticText[1]")
-    # raise Exception unless title.label == "Second View"
+    title = find_element(:xpath,navBarTitle)
+    raise Exception unless title.label == "Second View"
 
     # Find every textfield.
     elements = textfields
@@ -55,14 +50,23 @@ module Test
     done_button.click
     puts 'Tapped Done button'
 
-    title = find_element(:xpath, "//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAStaticText[1]")
-
+    title = find_element(:xpath, navBarTitle)
     raise Exception unless title.label == "First View"
 
-    modal_button = find_element(:xpath, "//UIAApplication[1]/UIAWindow[1]/UIAButton[2]")
+    modal_button = find_element(:xpath,
+    "//UIAApplication[1]/UIAWindow[1]/UIAButton[2]")
     modal_button.click
     puts 'Tapped Modal button'
 
+    title = find_element(:xpath,
+    "//UIAApplication[1]/UIAWindow[1]/UIAStaticText[1]")
+    raise Exception unless title.label == "List"
+
+    close_button = find_element(:xpath,
+    "/UIAApplication[1]/UIAWindow[1]/UIAButton[1]")
+    close_button.click
+    puts 'Tapped Close button'
+    
     driver_quit
     puts 'Tests Finished'
 
