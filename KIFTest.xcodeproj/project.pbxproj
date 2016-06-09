@@ -385,7 +385,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo *****Copy executable in ${PROJECT_DIR}/KIFTest/build*****\ncp -R ${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.app ${PROJECT_DIR}/KIFTest/build\ncd ${PROJECT_DIR}/appium\necho *****Start ruby test script*****\nrspec ios.rb";
+			shellScript = "APP_PATH=${PROJECT_DIR}/${EXECUTABLE_NAME}/build\n\nif [ ! -d \"$APP_PATH\" ]; then\nmkdir $APP_PATH\nfi\n\necho ***** Zip ${EXECUTABLE_NAME}.app and move in $APP_PATH *****\n\nzip -r $APP_PATH/${EXECUTABLE_NAME}.app.zip ${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.app\ncd ${PROJECT_DIR}/appium\n\necho ***** Start ruby test script *****\n\nrspec ios.rb";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'appium_lib'
 
-APP_PATH = '../KIFTest/build/KIFTest.zip'
+APP_PATH = '../KIFTest/build/KIFTest.app.zip'
 
 desired_caps = {
   caps: {
@@ -62,9 +62,6 @@ module Test
     "//UIAApplication[1]/UIAWindow[1]/UIAStaticText[1]")
     raise Exception unless title.label == "List"
 
-    # close_button = find_element(:xpath,
-    # "/UIAApplication[1]/UIAWindow[1]/UIAButton[1]")
-    # close_button.click
     find_element(:xpath, "//UIAApplication[1]/UIAWindow[1]/UIAButton[1]").click
     puts 'Tapped Close button'
 
