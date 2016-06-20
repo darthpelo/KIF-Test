@@ -21,7 +21,7 @@
 # For more on rspec assertions, check out
 # https://www.relishapp.com/rspec/rspec-expectations/docs
 
-Given /^The view title was (.+)$/ do |title|
+Given "The view title labelled $title" do |title|
   navBarTitle = "//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAStaticText[1]"
   find_element(:xpath, navBarTitle).label.should eq title
 end
@@ -31,22 +31,16 @@ Given /^I have entered (\d+) into field (\d+) of the application$/ do |value, fi
   textfield(field.to_i).type value
 end
 
-Given /^I have entered (\d+) into a field of the application showing (\w+)$/ do |value, field|
-  # Get a textfield by string
+Given "I have entered $value into a field of the application showing $text" do |value, field|
   textfield(field).type value
 end
-
-# And /^I have entered (\d+) into field (\d+) of the application$/ do |value, field|
-#   # Get a textfield by index
-#   textfield(field.to_i).type value
-# end
 
 And /^I press button (\d+)$/ do |button_index|
   # Find a button by index
   button(button_index.to_i).click
 end
 
-And /^I press a button labelled (\w+)$/ do |button_text|
+And "I press a button labelled $text" do |button_text|
   # Find a button by text
   button(button_text).click
 end
@@ -55,8 +49,3 @@ Then /^the result should be displayed as (\d+)$/ do |expected|
   # You can get just the first of a class of elements
   first_text.value.should eq expected
 end
-
-# Then /^the view title was (.+)$/ do |title|
-#   navBarTitle = "//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAStaticText[1]"
-#   find_element(:xpath, navBarTitle).label.should eq title
-# end
