@@ -26,15 +26,20 @@ Given /^The view title was (.+)$/ do |title|
   find_element(:xpath, navBarTitle).label.should eq title
 end
 
-Given /^I have entered (\d+) into field (\d+) of the calculator$/ do |value, field|
+Given /^I have entered (\d+) into field (\d+) of the application$/ do |value, field|
   # Get a textfield by index
   textfield(field.to_i).type value
 end
 
-Given /^I have entered (\d+) into a field of the calculator showing (\w+)$/ do |value, field|
+Given /^I have entered (\d+) into a field of the application showing (\w+)$/ do |value, field|
   # Get a textfield by string
   textfield(field).type value
 end
+
+# And /^I have entered (\d+) into field (\d+) of the application$/ do |value, field|
+#   # Get a textfield by index
+#   textfield(field.to_i).type value
+# end
 
 And /^I press button (\d+)$/ do |button_index|
   # Find a button by index
@@ -51,7 +56,7 @@ Then /^the result should be displayed as (\d+)$/ do |expected|
   first_text.value.should eq expected
 end
 
-Then /^the view title was (.+)$/ do |title|
-  navBarTitle = "//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAStaticText[1]"
-  find_element(:xpath, navBarTitle).label.should eq title
-end
+# Then /^the view title was (.+)$/ do |title|
+#   navBarTitle = "//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAStaticText[1]"
+#   find_element(:xpath, navBarTitle).label.should eq title
+# end
