@@ -29,8 +29,7 @@ module Test
     title = find_element(:xpath, navBarTitle)
     raise Exception unless title.label == "First View"
 
-    next_button =
-    find_element(:xpath, "//UIAApplication[1]/UIAWindow[1]/UIAButton[1]")
+    next_button = button(1)
     next_button.click
     puts 'Tapped Next button'
 
@@ -45,16 +44,14 @@ module Test
       element.send_keys(values[index])
     end
 
-    done_button =
-    find_element(:xpath, "//UIAApplication[1]/UIAWindow[1]/UIAButton[1]")
+    done_button = button(1)
     done_button.click
     puts 'Tapped Done button'
 
     title = find_element(:xpath, navBarTitle)
     raise Exception unless title.label == "First View"
 
-    modal_button = find_element(:xpath,
-    "//UIAApplication[1]/UIAWindow[1]/UIAButton[2]")
+    modal_button = button(2)
     modal_button.click
     puts 'Tapped Modal button'
 
@@ -62,7 +59,7 @@ module Test
     "//UIAApplication[1]/UIAWindow[1]/UIAStaticText[1]")
     raise Exception unless title.label == "List"
 
-    find_element(:xpath, "//UIAApplication[1]/UIAWindow[1]/UIAButton[1]").click
+    button(1).click
     puts 'Tapped Close button'
 
     driver_quit
